@@ -12,6 +12,7 @@ Url:		http://search.cpan.org/dist/%{module}
 Source0:	http://www.cpan.org/modules/by-module/XML/%{module}-%{version}.tar.bz2
 BuildRequires:	perl-devel perl(XML::Parser)
 Requires:	perl , perl-XML-Parser
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
 Buildarch:	noarch
 
 %description
