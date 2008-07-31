@@ -1,6 +1,6 @@
 %define module 	XML-miniXQL
 %define version 0.04
-%define release %mkrel 10
+%define release %mkrel 11
 
 Summary:	%{module} perl module
 Name: 		perl-%{module}
