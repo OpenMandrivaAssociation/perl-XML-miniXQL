@@ -1,19 +1,20 @@
-%define module 	XML-miniXQL
-%define version 0.04
-%define release %mkrel 11
+%define upstream_name 	 XML-miniXQL
+%define upstream_version 0.04
 
-Summary:	%{module} perl module
-Name: 		perl-%{module}
-Version: 	%{version}
-Release: 	%{release}
-License: 	GPL or Artistic
+Name: 		perl-%{upstream_name}
+Version: 	%perl_convert_version %{upstream_version}
+Release: 	%mkrel 1
+
+Summary:	%{upstream_name} perl module
+License: 	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
-Source0:	http://www.cpan.org/modules/by-module/XML/%{module}-%{version}.tar.bz2
-BuildRequires:	perl-devel perl(XML::Parser)
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildRequires:  perl(XML::Parser)
+Buildarch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 Requires:	perl , perl-XML-Parser
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
-Buildarch:	noarch
 
 %description
 This module provides a simplistic XQL like search engine for XML files.
@@ -21,7 +22,7 @@ This module provides a simplistic XQL like search engine for XML files.
 %prep
 rm -rf $RPM_BUILD_ROOT
 
-%setup -q  -n %{module}-%{version}
+%setup -q  -n %{upstream_name}-%{upstream_version}
 
 %build
 
@@ -42,7 +43,3 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/XML/*
 %{perl_vendorlib}/auto/XML/*
 %{_mandir}/*/*
-
-
-
-
