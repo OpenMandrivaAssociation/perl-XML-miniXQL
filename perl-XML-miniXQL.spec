@@ -1,15 +1,13 @@
 %define upstream_name 	 XML-miniXQL
-%define upstream_version 0.04
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.04
+Release:	6
 
 Summary:	%{upstream_name} perl module
 License: 	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/XML-miniXQL
-Source0:	https://cpan.metacpan.org/authors/id/M/MS/MSERGEANT/XML-miniXQL-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/M/MS/MSERGEANT/XML-miniXQL-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -21,7 +19,7 @@ Requires:	perl(XML::Parser)
 This module provides a simplistic XQL like search engine for XML files.
 
 %prep
-%setup -q  -n %{upstream_name}-%{upstream_version}
+%setup -q  -n %{upstream_name}-%{version}
 
 %build
 CFLAGS="%{optflags}" perl Makefile.PL INSTALLDIRS=vendor
@@ -43,9 +41,7 @@ make test
 %changelog
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.40.0-1mdv2010.0
 + Revision: 401858
-- rebuild using %%perl_convert_version
-
-* Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.04-11mdv2009.0
+- rebuild using %0.04 Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.04-11mdv2009.0
 + Revision: 258843
 - rebuild
 
